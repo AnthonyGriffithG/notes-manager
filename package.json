@@ -1,0 +1,23 @@
+{
+  "name": "notes-manager",
+  "version": "1.0.0",
+  "description": "Web application to manage notes from an user",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnthonyGriffith/notes-manager.git"
+  },
+  "author": "Anthony Griffith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnthonyGriffith/notes-manager/issues"
+  },
+  "homepage": "https://github.com/AnthonyGriffith/notes-manager#readme",
+  "devDependencies": {
+    "parcel": "^2.0.1"
+  }
+}
