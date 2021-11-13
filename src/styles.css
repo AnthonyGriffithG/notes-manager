@@ -4,16 +4,28 @@
   box-sizing: border-box;
 }
 
-.main-header {
+body {
+  font-size: 14px;
+}
+
+/* GENERAL */
+#body-container {
+  display: grid;
+  grid-template-columns: 300px 3fr 1fr;
+}
+
+/* HEADER */
+
+#main-header {
   display: flex;
   background-color: #7950f2;
   padding: 2px;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
+  grid-column: 1/-1;
 }
 
-/* HEADER */
 .menu-icon {
   stroke: #fff;
   width: 20px;
@@ -72,4 +84,115 @@
 
 #search-bar input:focus {
   outline: none;
+}
+
+/* CATEGORIES */
+#categories {
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 10px;
+  row-gap: 10px;
+  height: 100vh;
+}
+.category-list {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 0 0;
+}
+
+#sidebar-options {
+  display: flex;
+  justify-content: space-between;
+}
+.sidebar-icons-container {
+  display: flex;
+  width: 25px;
+  height: 25px;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-icon {
+  stroke: #b197fc;
+  width: 22px;
+  cursor: pointer;
+}
+
+.back-icon:hover {
+  width: 25px;
+}
+
+.add-icon {
+  stroke: #b197fc;
+  width: 22px;
+  cursor: pointer;
+}
+
+.add-icon:hover {
+  width: 25px;
+}
+
+.category-icon {
+  width: 18px;
+  margin-left: 20px;
+}
+.category {
+  display: flex;
+  column-gap: 20px;
+  padding: 5px 0;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.category:hover {
+  background-color: #fff;
+}
+/* NOTES */
+#notes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 200px;
+  height: max-content;
+}
+
+.note {
+  background-color: #7048e8bd;
+  display: flex;
+  width: 250px;
+  height: 150px;
+  place-self: center;
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 16px;
+  box-shadow: 3px 3px rgb(99, 99, 99);
+}
+
+.add-note {
+  background-color: #b197fc;
+  display: flex;
+  width: 150px;
+  height: 90px;
+  place-self: center;
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 16px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s, width 0.7s, height 0.7s;
+  box-shadow: 3px 3px rgb(99, 99, 99);
+}
+
+.add-note:hover {
+  background-color: #7048e8bd;
+  width: 250px;
+  height: 150px;
+}
+/* OPCIONES */
+#opciones {
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
 }
