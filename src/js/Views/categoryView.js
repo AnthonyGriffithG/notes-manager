@@ -10,6 +10,7 @@ class CategoryView {
     this._formAddCategory = document.getElementById("new-category-form");
     this._addCategoryBtn = document.querySelector(".add-icon");
     this._addCategoryBtn.addEventListener("click", this._showForm.bind(this));
+    this.getFormInput().addEventListener("blur", this._hideForm.bind(this));
   }
 
   getQuery() {
@@ -31,17 +32,14 @@ class CategoryView {
       this.getFormInput().value = "";
       handler(query);
     });
-    this.getFormInput().addEventListener("blur", (e) => {
-      console.log(this);
-      e.preventDefault();
-      this._hideForm(e);
-    });
   }
 
   addRenderCategoryHandler(handler) {
     this._parentEl.addEventListener("click", (e) => {
       const categoryBTN = e.target.closest(".category");
       if (!categoryBTN) return;
+      this._parentEl.querySelector(".current").classList.remove("current");
+      categoryBTN.classList.add("current");
       const categoryName = categoryBTN.textContent.trim();
       handler(categoryName);
     });
@@ -72,6 +70,7 @@ class CategoryView {
   _hideForm(e) {
     e.preventDefault();
     this._parentEl.lastElementChild.classList.add("hidden");
+    this.getFormInput().value = "";
     this.getFormInput().focus();
   }
 }
