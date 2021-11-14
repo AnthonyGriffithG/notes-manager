@@ -140,7 +140,8 @@ body {
   width: 18px;
   margin-left: 20px;
 }
-.category {
+.category,
+.category-add {
   display: flex;
   column-gap: 20px;
   padding: 5px 0;

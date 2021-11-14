@@ -7,12 +7,9 @@ class CategoryView {
   _addCategoryBtn;
   constructor() {
     this._parentEl = document.querySelector(".category-list");
-    this._formAddCategory = document.querySelector(".new-category-form");
+    this._formAddCategory = document.getElementById("new-category-form");
     this._addCategoryBtn = document.querySelector(".add-icon");
-    this._addCategoryBtn.addEventListener(
-      "click",
-      this._showCategoryForm.bind(this)
-    );
+    this._addCategoryBtn.addEventListener("click", this._showForm.bind(this));
   }
 
   getQuery() {
@@ -34,13 +31,10 @@ class CategoryView {
       this.getFormInput().value = "";
       handler(query);
     });
-    this._formAddCategory.addEventListener("blur", (e) => {
+    this.getFormInput().addEventListener("blur", (e) => {
+      console.log(this);
       e.preventDefault();
-      const query = this.getQuery();
-      this._parentEl.lastElementChild.classList.toggle("hidden");
-      if (!query) return;
-      this.getFormInput().value = "";
-      handler(query);
+      this._hideForm(e);
     });
   }
 
@@ -70,9 +64,14 @@ class CategoryView {
     `;
   }
 
-  _showCategoryForm(e) {
+  _showForm(e) {
     e.preventDefault();
-    this._parentEl.lastElementChild.classList.toggle("hidden");
+    this._parentEl.lastElementChild.classList.remove("hidden");
+    this.getFormInput().focus();
+  }
+  _hideForm(e) {
+    e.preventDefault();
+    this._parentEl.lastElementChild.classList.add("hidden");
     this.getFormInput().focus();
   }
 }
