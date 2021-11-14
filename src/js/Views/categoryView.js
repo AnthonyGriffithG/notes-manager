@@ -30,6 +30,7 @@ class CategoryView {
       this._parentEl.lastElementChild.classList.toggle("hidden");
       if (!query) return;
       this.getFormInput().value = "";
+      console.log("hola");
       handler(query);
     });
   }
@@ -47,6 +48,7 @@ class CategoryView {
 
   render(data) {
     if (!data) return;
+    this._data = data;
     const markup = this._generateCategoryMarkup(data.name, data.index);
     this._parentEl.lastElementChild.insertAdjacentHTML("beforebegin", markup);
   }

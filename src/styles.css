@@ -166,8 +166,7 @@ body {
 #notes {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 200px;
-  height: max-content;
+  grid-auto-rows: 200px;
 }
 
 .note {
@@ -177,7 +176,6 @@ body {
   height: 150px;
   place-self: center;
   border-radius: 5px;
-  padding: 15px;
   font-size: 16px;
   box-shadow: 3px 3px rgb(99, 99, 99);
 }
@@ -200,8 +198,35 @@ body {
 
 .add-note:hover {
   background-color: #7048e8bd;
+  user-select: none;
+}
+
+.new-note-form {
+  background-color: #7048e8bd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 250px;
   height: 150px;
+  place-self: center;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 3px 3px rgb(99, 99, 99);
+}
+
+textarea {
+  width: 95%;
+  height: 95%;
+  border: none;
+  resize: none;
+  background-color: inherit;
+  outline: none;
+  background-color: transparent;
+  color: white;
+}
+
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.658);
 }
 /* OPCIONES */
 #opciones {

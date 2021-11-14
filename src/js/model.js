@@ -3,7 +3,7 @@ export const state = {
   categories: [
     {
       name: "Reminders",
-      notes: ["hola"],
+      notes: [],
       index: 0,
     },
     {
@@ -39,8 +39,11 @@ export const findCategory = function (categoryName) {
   return state.categories.find((category) => category.name === categoryName);
 };
 
+export const addNote = function (note) {
+  state.currentCategory.notes.push(note);
+};
+
 const init = function () {
   state.currentCategory = state.categories[0];
 };
-
 init();

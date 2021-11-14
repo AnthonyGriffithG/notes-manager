@@ -21,8 +21,15 @@ const controlCategoryClick = function (categoryName) {
   notesView.renderCategory(category);
 };
 
+const controlAddNote = function (note) {
+  // 1) add note to the current category
+  model.addNote(note);
+
+  // 2) render it
+};
 const init = function () {
   categoryView.addHandlerCreateCategory(controlAddCategory);
   categoryView.addRenderCategoryHandler(controlCategoryClick);
+  notesView.newNoteHandler = controlAddNote;
 };
 init();
