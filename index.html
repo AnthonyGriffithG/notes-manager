@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/styles.css"/>
-    <script type="module" src="./src/script.js"></script>
+    <script type="module" src="./src/js/controller.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -33,30 +33,30 @@
           </svg></span>
         </div>
         <ul class="category-list">
-          <li class="category"><svg xmlns="http://www.w3.org/2000/svg" class="category-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
-          </svg>
-          <p>Recordatorios</p>
-        </li>
-        <li class="category">
+          <li class="category current" data-index="0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="category-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+            </svg>
+            <p>Reminders</p>
+          </li>
+          <li class="category" data-index="1">
             <svg xmlns="http://www.w3.org/2000/svg" class="category-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
           </svg>
-          <p>Apuntes</p>
-        </li>
-        <li class="category">
-          <svg xmlns="http://www.w3.org/2000/svg" class="category-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-          </svg>
-        <p>Personal</p>
-      </li>
+          <p>Notes</p>
+          </li>
+          <li class="category hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="category-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+            </svg>
+            <form class="new-category-form">
+              <input class="new-category"/>
+            </form>
+          </li>
+          
         </ul>
       </section>
       <section id="notes">
-        <div class="note">El lunes tengo un compromiso a las 10PM</div>
-        <div class="note">El sabado hay una fiesta en la casa de jose ramirez y hay que comprarle regalo de cumpleaños</div>
-        <div class="note">Este sabado hay examen de matematicas</div>
-        <div class="note">El domingo tengo una cita en el doctor y deberia estar en el hospital a las 4pm a mas tardar</div>
         <div class="add-note">Agregar nota</div>
       </section>
         
