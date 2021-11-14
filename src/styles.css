@@ -13,7 +13,10 @@ body {
   display: grid;
   grid-template-columns: 300px 3fr 1fr;
 }
-
+.hidden {
+  visibility: none;
+  opacity: 0;
+}
 /* HEADER */
 
 #main-header {
@@ -137,7 +140,8 @@ body {
   width: 18px;
   margin-left: 20px;
 }
-.category {
+.category,
+.category-add {
   display: flex;
   column-gap: 20px;
   padding: 5px 0;
@@ -148,6 +152,15 @@ body {
 
 .category:hover {
   background-color: #fff;
+}
+
+.new-category {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.current {
+  background-color: #f1f3f5 !important;
 }
 /* NOTES */
 #notes {

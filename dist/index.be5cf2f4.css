@@ -13,7 +13,10 @@ body {
   display: grid;
   grid-template-columns: 300px 3fr 1fr;
 }
-
+.hidden {
+  visibility: none;
+  opacity: 0;
+}
 /* HEADER */
 
 #main-header {
@@ -148,6 +151,11 @@ body {
 
 .category:hover {
   background-color: #fff;
+}
+
+.new-category {
+  font-size: inherit;
+  font-weight: inherit;
 }
 /* NOTES */
 #notes {
