@@ -170,14 +170,16 @@ body {
 }
 
 .note {
-  background-color: #7048e8bd;
-  display: flex;
+  background-color: #422b86;
+  color: #fff;
   width: 250px;
   height: 150px;
   place-self: center;
   border-radius: 5px;
   font-size: 16px;
   box-shadow: 3px 3px rgb(99, 99, 99);
+  padding: 15px;
+  overflow-wrap: break-word;
 }
 
 .add-note {
@@ -202,31 +204,48 @@ body {
 }
 
 .new-note-form {
-  background-color: #7048e8bd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: #422b86;
   width: 250px;
   height: 150px;
   place-self: center;
   border-radius: 5px;
   font-size: 16px;
   box-shadow: 3px 3px rgb(99, 99, 99);
+  padding: 15px;
 }
 
 textarea {
   width: 95%;
-  height: 95%;
+  height: 80%;
   border: none;
   resize: none;
-  background-color: inherit;
+  overflow: hidden;
   outline: none;
   background-color: transparent;
-  color: white;
+  color: #fff;
 }
 
 textarea::placeholder {
   color: rgba(255, 255, 255, 0.658);
+}
+
+.submit-note {
+  background-color: white;
+  width: 60px;
+  height: 25px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 3px 3px rgb(99, 99, 99);
+  transition: background-color 0.2s;
+}
+.submit-note:hover {
+  background-color: #f1f3f5;
+}
+
+.note-footer {
+  display: flex;
+  justify-content: flex-end;
 }
 /* OPCIONES */
 #opciones {

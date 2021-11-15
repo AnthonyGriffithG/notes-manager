@@ -14,11 +14,10 @@ const controlAddCategory = function (newCategory) {
 
 const controlCategoryClick = function (categoryName) {
   // 1) search category
-  const category = model.findCategory(categoryName);
+  model.changeCategory(categoryName);
 
   // 2) render it
-  console.log(categoryName);
-  notesView.renderCategory(category);
+  notesView.renderCategory(model.state.currentCategory);
 };
 
 const controlAddNote = function (note) {
@@ -26,10 +25,12 @@ const controlAddNote = function (note) {
   model.addNote(note);
 
   // 2) render it
+  notesView.renderNote(note);
 };
 const init = function () {
   categoryView.addHandlerCreateCategory(controlAddCategory);
   categoryView.addRenderCategoryHandler(controlCategoryClick);
-  notesView.newNoteHandler = controlAddNote;
+  notesView.renderCategory(model.state.currentCategory);
+  notesView.addNewNoteHandler(controlAddNote);
 };
 init();

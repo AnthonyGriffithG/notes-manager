@@ -1,15 +1,16 @@
 export const state = {
-  currentCategory: {},
+  currentCategory: {
+    name: "",
+    notes: [],
+  },
   categories: [
     {
       name: "Reminders",
       notes: [],
-      index: 0,
     },
     {
       name: "Notes",
       notes: [],
-      index: 1,
     },
   ],
   search: {
@@ -27,7 +28,6 @@ export const addCategory = function (nombre) {
   const newCategory = {
     name: nombre,
     notes: [],
-    index: state.categories.length,
   };
   state.categories.push(newCategory);
 
@@ -35,8 +35,9 @@ export const addCategory = function (nombre) {
   state.currentCategory = newCategory;
 };
 
-export const findCategory = function (categoryName) {
-  return state.categories.find((category) => category.name === categoryName);
+export const changeCategory = function (name) {
+  const category = state.categories.find((category) => category.name === name);
+  state.currentCategory = category;
 };
 
 export const addNote = function (note) {

@@ -1,32 +1,20 @@
 class NotesView {
   _parentEl = document.getElementById("notes");
-  _btnAddNote = this._parentEl.querySelector(".add-note");
-  newNoteHandler;
-  constructor() {
-    this._btnAddNote.addEventListener("click", this.addNoteHandler.bind(this));
-  }
+  _btnAddNote = this._parentEl.querySelector(".submit-note");
+  _formTextarea = this._parentEl.querySelector("textarea");
+  _noteForm = this._parentEl.querySelector(".new-note-form");
+  _data;
 
-  addNoteHandler(event) {
-    event.preventDefault();
-    const form = this._parentEl.querySelector(".new-note-form");
-    if (form) return;
-    const markup = `
-    <form class="new-note-form">
-          <textarea placeholder="Add your note's text"></textarea>
-    </form>
-    `;
-    this._btnAddNote.insertAdjacentHTML("beforebegin", markup);
-
-    const noteFormEl = this._parentEl.querySelector(".new-note-form");
-    const noteText = this.getTextAreaElement().value.trim();
-    noteFormEl.addEventListener("submit", (e) => {
+  addNewNoteHandler(handler) {
+    this._noteForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      this._parentEl.removeChild(noteFormEl);
-      handler(noteText);
+      const text = this._formTextarea.value;
+      handler(text);
     });
   }
 
   renderCategory(data) {
+    this._data = data;
     const markup = data.notes
       .map((note) => {
         return `
@@ -36,10 +24,17 @@ class NotesView {
       .join("");
     const noteElements = Array.from(this._parentEl.querySelectorAll(".note"));
     noteElements.forEach((noteEl) => this._parentEl.removeChild(noteEl));
-    this._btnAddNote.insertAdjacentHTML("beforebegin", markup);
+    this._noteForm.insertAdjacentHTML("beforebegin", markup);
   }
 
-  renderNote() {}
+  renderNote() {
+    const note = this._data.notes.slice(-1);
+    const markup = `
+    <div class="note"><p>${note}<p></div>
+    `;
+    this._noteForm.insertAdjacentHTML("beforebegin", markup);
+    this._formTextarea.value = "";
+  }
 
   getTextAreaElement() {
     return this._parentEl.querySelector("textarea");

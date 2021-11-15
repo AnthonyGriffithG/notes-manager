@@ -30,7 +30,6 @@ class CategoryView {
       this._parentEl.lastElementChild.classList.toggle("hidden");
       if (!query) return;
       this.getFormInput().value = "";
-      console.log("hola");
       handler(query);
     });
   }
@@ -49,13 +48,14 @@ class CategoryView {
   render(data) {
     if (!data) return;
     this._data = data;
-    const markup = this._generateCategoryMarkup(data.name, data.index);
+    const markup = this._generateCategoryMarkup(data.name);
+    this._parentEl.querySelector(".current").classList.remove("current");
     this._parentEl.lastElementChild.insertAdjacentHTML("beforebegin", markup);
   }
 
-  _generateCategoryMarkup(name, index) {
+  _generateCategoryMarkup(name) {
     return `
-    <li class="category" data-index="${index}">
+    <li class="category current">
       <svg xmlns="http://www.w3.org/2000/svg" class="category-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
       </svg>
@@ -73,7 +73,6 @@ class CategoryView {
     e.preventDefault();
     this._parentEl.lastElementChild.classList.add("hidden");
     this.getFormInput().value = "";
-    this.getFormInput().focus();
   }
 }
 
