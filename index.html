@@ -4,16 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto:wght@100;300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/styles.css"/>
     <script type="module" src="./src/js/controller.js"></script>
     <title>Document</title>
   </head>
   <body>
+    
     <div id="body-container">
       <header id="main-header">
-        <span class="menu-icon-container"><svg xmlns="http://www.w3.org/2000/svg" class="menu-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg></span>
+        <span class="menu-icon-container">
+          <svg xmlns="http://www.w3.org/2000/svg" class="logo-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+          </svg>
+        </span>
   
         <div id="search-bar">
           <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -25,9 +31,6 @@
       </header>
       <section id="categories">
         <div id="sidebar-options">
-          <span class="sidebar-icons-container"><svg xmlns="http://www.w3.org/2000/svg" class="back-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-          </svg></span>
           <span class="sidebar-icons-container"><svg xmlns="http://www.w3.org/2000/svg" class="add-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
           </svg></span>
@@ -50,7 +53,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
             </svg>
             <form id="new-category-form">
-              <input class="new-category" type="text"/>
+              <input class="new-category" type="text" maxlength="14"/>
             </form>
           </li>
           
@@ -58,7 +61,7 @@
       </section>
       <section id="notes">
         <form class="new-note-form">
-          <textarea placeholder="Add your note's text" maxlength="150" rows="8" cols="10"></textarea>
+          <textarea placeholder="Add your note's text" maxlength="140" rows="5" cols="10"></textarea>
           <div class="note-footer">
             <button class="submit-note" type="submit">add</button>
           </div>
@@ -66,7 +69,9 @@
         
       </section>
         
-      <section id="opciones"></section>
+      <section id="opciones">
+        
+      </section>
     </div>
     
   </body>

@@ -1,15 +1,20 @@
 import * as model from "./model.js";
 import categoryView from "./Views/CategoryView.js";
 import notesView from "./Views/notesView.js";
+
 const controlAddCategory = function (newCategory) {
-  // 1) add new category
-  model.addCategory(newCategory);
+  try {
+    // 1) add new category
+    model.addCategory(newCategory);
 
-  // 2) render category
-  categoryView.render(model.state.currentCategory);
+    // 2) render category
+    categoryView.render(model.state.currentCategory);
 
-  // 3) render notes
-  notesView.renderCategory(model.state.currentCategory);
+    // 3) render notes
+    notesView.renderCategory(model.state.currentCategory);
+  } catch (err) {
+    console.log("Ya existe esa categoria");
+  }
 };
 
 const controlCategoryClick = function (categoryName) {
@@ -28,6 +33,7 @@ const controlAddNote = function (note) {
   notesView.renderNote(note);
 };
 const init = function () {
+  categoryView._data = model.state;
   categoryView.addHandlerCreateCategory(controlAddCategory);
   categoryView.addRenderCategoryHandler(controlCategoryClick);
   notesView.renderCategory(model.state.currentCategory);

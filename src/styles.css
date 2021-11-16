@@ -2,21 +2,40 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
   font-size: 14px;
+  overflow: hidden;
+  user-select: none;
 }
 
 /* GENERAL */
 #body-container {
   display: grid;
-  grid-template-columns: 300px 3fr 1fr;
+  grid-template-columns: 250px 3fr 1fr;
 }
 .hidden {
   visibility: none;
   opacity: 0;
 }
+
+.error-message {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0%;
+  left: 0%;
+  padding: 20px;
+  width: 200px;
+  height: 100px;
+  color: #fff;
+  border-radius: 20px;
+  background-color: rgb(146, 52, 80);
+}
+
 /* HEADER */
 
 #main-header {
@@ -29,17 +48,11 @@ body {
   grid-column: 1/-1;
 }
 
-.menu-icon {
+.logo-icon {
   stroke: #fff;
   width: 20px;
   height: 20px;
   transition: width 0.2s, height 0.2s;
-}
-
-.menu-icon:hover {
-  cursor: pointer;
-  width: 24px;
-  height: 24px;
 }
 
 .menu-icon-container {
@@ -98,6 +111,7 @@ body {
   row-gap: 10px;
   height: 100vh;
 }
+
 .category-list {
   display: flex;
   flex-direction: column;
@@ -106,7 +120,7 @@ body {
 
 #sidebar-options {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 .sidebar-icons-container {
   display: flex;
@@ -114,16 +128,6 @@ body {
   height: 25px;
   align-items: center;
   justify-content: center;
-}
-
-.back-icon {
-  stroke: #b197fc;
-  width: 22px;
-  cursor: pointer;
-}
-
-.back-icon:hover {
-  width: 25px;
 }
 
 .add-icon {
@@ -150,13 +154,11 @@ body {
   transition: background-color 0.2s;
 }
 
-.category:hover {
-  background-color: #fff;
-}
-
 .new-category {
   font-size: inherit;
-  font-weight: inherit;
+}
+.category:hover {
+  background-color: #fff;
 }
 
 .current {
@@ -176,7 +178,6 @@ body {
   height: 150px;
   place-self: center;
   border-radius: 5px;
-  font-size: 16px;
   box-shadow: 3px 3px rgb(99, 99, 99);
   padding: 15px;
   overflow-wrap: break-word;
@@ -190,7 +191,6 @@ body {
   place-self: center;
   border-radius: 5px;
   padding: 15px;
-  font-size: 16px;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -209,12 +209,12 @@ body {
   height: 150px;
   place-self: center;
   border-radius: 5px;
-  font-size: 16px;
   box-shadow: 3px 3px rgb(99, 99, 99);
   padding: 15px;
 }
 
 textarea {
+  font-size: inherit;
   width: 95%;
   height: 80%;
   border: none;
