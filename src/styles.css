@@ -186,6 +186,7 @@ body {
 
 .note {
   display: flex;
+  opacity: 1;
   flex-direction: column;
   justify-content: space-between;
   background-color: #fef68a;
@@ -196,6 +197,7 @@ body {
   border-radius: 5px;
   padding: 15px;
   overflow-wrap: break-word;
+  transition: opacity 0.2s linear;
   animation: append-animate 0.3s linear;
 }
 

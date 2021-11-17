@@ -31,7 +31,7 @@ const controlAddNote = function (note) {
   model.addNote(note);
 
   // 2) render it
-  const newNote = model.state.currentCategory.notes.splice(-1)[0];
+  const newNote = model.state.currentCategory.notes.slice(-1)[0];
   notesView.renderNote(newNote);
 };
 
@@ -42,9 +42,13 @@ const controlSearchNotes = function (query) {
   notesView.renderCategory(model.state.search);
 };
 
-const control = function () {};
+const controlDeleteNote = function (noteID) {
+  // 1) delete the note
+  model.deleteNote(noteID);
+};
 const init = function () {
   categoryView._data = model.state;
+  notesView._deleteHandler = controlDeleteNote;
   categoryView.addHandlerCreateCategory(controlAddCategory);
   categoryView.addRenderCategoryHandler(controlCategoryClick);
   notesView.renderCategory(model.state.currentCategory);
