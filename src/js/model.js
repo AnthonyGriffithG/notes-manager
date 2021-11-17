@@ -47,7 +47,12 @@ export const changeCategory = function (name) {
 };
 
 export const addNote = function (note) {
-  state.currentCategory.notes.push(note);
+  const date = new Date(Date.now()).toDateString();
+  const newNote = {
+    note: note,
+    date: date,
+  };
+  state.currentCategory.notes.push(newNote);
   saveData();
 };
 

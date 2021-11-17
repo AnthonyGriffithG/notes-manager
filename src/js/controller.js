@@ -31,7 +31,8 @@ const controlAddNote = function (note) {
   model.addNote(note);
 
   // 2) render it
-  notesView.renderNote(note);
+  const newNote = model.state.currentCategory.notes.splice(-1)[0];
+  notesView.renderNote(newNote);
 };
 
 const controlSearchNotes = function (query) {
@@ -40,6 +41,8 @@ const controlSearchNotes = function (query) {
   // 2) render them
   notesView.renderCategory(model.state.search);
 };
+
+const control = function () {};
 const init = function () {
   categoryView._data = model.state;
   categoryView.addHandlerCreateCategory(controlAddCategory);

@@ -15,23 +15,42 @@ class NotesView {
 
   renderCategory(data) {
     this._data = data;
-    console.log(data);
-    const markup = data.notes
-      .map((note) => {
-        return `
-      <div class="note">${note}</div>
+    const markups = data.notes.map((note) => {
+      return `
+      <div class="note">
+        ${note.note}
+        <footer class="note-footer">
+          <p>${note.date}</p>
+          <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" class="delete-note-icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+            </svg>
+          </div>
+        </footer>
+      </div>
       `;
-      })
-      .join("");
+    });
     const noteElements = Array.from(this._parentEl.querySelectorAll(".note"));
     noteElements.forEach((noteEl) => this._parentEl.removeChild(noteEl));
-    this._noteForm.insertAdjacentHTML("beforebegin", markup);
+    markups.forEach((markup) => {
+      this._noteForm.insertAdjacentHTML("beforebegin", markup);
+    });
   }
 
-  renderNote() {
-    const note = this._data.notes.slice(-1);
+  renderNote(note) {
+    if (!note) return;
     const markup = `
-    <div class="note"><p>${note}<p></div>
+    <div class="note">
+        ${note.note}
+        <footer class="note-footer">
+          <p>${note.date}</p>
+          <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" class="delete-note-icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+            </svg>
+          </div>
+        </footer>
+      </div>
     `;
     this._noteForm.insertAdjacentHTML("beforebegin", markup);
     this._formTextarea.value = "";
