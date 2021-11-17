@@ -489,7 +489,7 @@ const controlAddNote = function(note) {
     // 1) add note to the current category
     _modelJs.addNote(note);
     // 2) render it
-    const newNote = _modelJs.state.currentCategory.notes.splice(-1)[0];
+    const newNote = _modelJs.state.currentCategory.notes.slice(-1)[0];
     _notesViewJsDefault.default.renderNote(newNote);
 };
 const controlSearchNotes = function(query) {
@@ -498,10 +498,13 @@ const controlSearchNotes = function(query) {
     // 2) render them
     _notesViewJsDefault.default.renderCategory(_modelJs.state.search);
 };
-const control = function() {
+const controlDeleteNote = function(noteID) {
+    // 1) delete the note
+    _modelJs.deleteNote(noteID);
 };
 const init = function() {
     _categoryViewJsDefault.default._data = _modelJs.state;
+    _notesViewJsDefault.default._deleteHandler = controlDeleteNote;
     _categoryViewJsDefault.default.addHandlerCreateCategory(controlAddCategory);
     _categoryViewJsDefault.default.addRenderCategoryHandler(controlCategoryClick);
     _notesViewJsDefault.default.renderCategory(_modelJs.state.currentCategory);
@@ -523,19 +526,24 @@ parcelHelpers.export(exports, "addNote", ()=>addNote
 );
 parcelHelpers.export(exports, "searchNotes", ()=>searchNotes
 );
+parcelHelpers.export(exports, "deleteNote", ()=>deleteNote
+);
 const state = {
     currentCategory: {
         name: "",
-        notes: []
+        notes: [],
+        currentID: 1
     },
     categories: [
         {
             name: "Reminders",
-            notes: []
+            notes: [],
+            currentID: 1
         },
         {
             name: "Notes",
-            notes: []
+            notes: [],
+            currentID: 1
         }, 
     ],
     search: {
@@ -551,7 +559,8 @@ const addCategory = function(name) {
         // 2) create and add the category
         const newCategory = {
             name: name,
-            notes: []
+            notes: [],
+            currentID: 0
         };
         state.categories.push(newCategory);
         // 3) set current category to the new one.
@@ -570,8 +579,10 @@ const addNote = function(note) {
     const date = new Date(Date.now()).toDateString();
     const newNote = {
         note: note,
-        date: date
+        date: date,
+        id: state.currentCategory.currentID + 1
     };
+    state.currentCategory.currentID += 1;
     state.currentCategory.notes.push(newNote);
     saveData();
 };
@@ -590,9 +601,13 @@ const getData = function() {
     state.search = data.search;
 };
 const searchNotes = function(query) {
-    const notes = state.currentCategory.notes.filter((note)=>note.toLowerCase().includes(query.toLowerCase())
+    const notes = state.currentCategory.notes.filter((note)=>note.note.toLowerCase().includes(query.toLowerCase())
     );
     state.search.notes = notes;
+};
+const deleteNote = function(id) {
+    for (let [index, note] of state.currentCategory.notes.entries())if (note.id === id) state.currentCategory.notes.splice(index, 1);
+    saveData();
 };
 const init = function() {
     getData();
@@ -721,6 +736,7 @@ class NotesView {
     _formTextarea = this._parentEl.querySelector("textarea");
     _noteForm = this._parentEl.querySelector(".new-note-form");
     _data;
+    _deleteHandler;
     addNewNoteHandler(handler) {
         this._noteForm.addEventListener("submit", (e)=>{
             e.preventDefault();
@@ -730,9 +746,11 @@ class NotesView {
     }
     renderCategory(data) {
         this._data = data;
-        const markups = data.notes.map((note)=>{
-            return `
-      <div class="note">
+        this._parentEl.querySelectorAll(".note").forEach((e)=>e.remove()
+        );
+        data.notes.forEach((note)=>{
+            const markup = `
+      <div class="note" data-id="${note.id}">
         ${note.note}
         <footer class="note-footer">
           <p>${note.date}</p>
@@ -744,18 +762,23 @@ class NotesView {
         </footer>
       </div>
       `;
-        });
-        const noteElements = Array.from(this._parentEl.querySelectorAll(".note"));
-        noteElements.forEach((noteEl)=>this._parentEl.removeChild(noteEl)
-        );
-        markups.forEach((markup)=>{
             this._noteForm.insertAdjacentHTML("beforebegin", markup);
+            const noteElement = this._noteForm.previousElementSibling;
+            const btnNote = noteElement.querySelector(".delete-note-icon");
+            btnNote.addEventListener("click", (event)=>{
+                event.preventDefault();
+                this._deleteHandler(note.id);
+                noteElement.style.opacity = "0";
+                setTimeout(function() {
+                    noteElement.remove();
+                }, 1000);
+            });
         });
     }
     renderNote(note) {
         if (!note) return;
         const markup = `
-    <div class="note">
+    <div class="note" data-id="${note.id}">
         ${note.note}
         <footer class="note-footer">
           <p>${note.date}</p>
@@ -768,7 +791,20 @@ class NotesView {
       </div>
     `;
         this._noteForm.insertAdjacentHTML("beforebegin", markup);
+        const noteElement = this._noteForm.previousElementSibling;
+        const btnNote = noteElement.querySelector(".delete-note-icon");
+        btnNote.addEventListener("click", (event)=>{
+            event.preventDefault();
+            this._deleteHandler(note.id);
+            noteElement.style.opacity = "0";
+            setTimeout(function() {
+                noteElement.remove();
+            }, 1000);
+        });
         this._formTextarea.value = "";
+    }
+    addHandlerDelete(handler1) {
+        this._deleteHandler = handler1;
     }
     getTextAreaElement() {
         return this._parentEl.querySelector("textarea");

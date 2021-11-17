@@ -2,15 +2,18 @@ export const state = {
   currentCategory: {
     name: "",
     notes: [],
+    currentID: 1,
   },
   categories: [
     {
       name: "Reminders",
       notes: [],
+      currentID: 1,
     },
     {
       name: "Notes",
       notes: [],
+      currentID: 1,
     },
   ],
   search: {
@@ -24,10 +27,12 @@ export const addCategory = function (name) {
     // 1) check if the category already exists
     const exists = categoryExist(name);
     if (exists) throw new Error("Categoria ya existente");
+
     // 2) create and add the category
     const newCategory = {
       name: name,
       notes: [],
+      currentID: 0,
     };
     state.categories.push(newCategory);
 
@@ -43,6 +48,7 @@ export const changeCategory = function (name) {
   const category = state.categories.find(
     (category) => category.name.toLowerCase() === name.toLowerCase()
   );
+
   state.currentCategory = category;
 };
 
@@ -51,7 +57,11 @@ export const addNote = function (note) {
   const newNote = {
     note: note,
     date: date,
+    id: state.currentCategory.currentID + 1,
   };
+
+  state.currentCategory.currentID += 1;
+
   state.currentCategory.notes.push(newNote);
   saveData();
 };
@@ -75,9 +85,18 @@ const getData = function () {
 
 export const searchNotes = function (query) {
   const notes = state.currentCategory.notes.filter((note) =>
-    note.toLowerCase().includes(query.toLowerCase())
+    note.note.toLowerCase().includes(query.toLowerCase())
   );
   state.search.notes = notes;
+};
+
+export const deleteNote = function (id) {
+  for (let [index, note] of state.currentCategory.notes.entries()) {
+    if (note.id === id) {
+      state.currentCategory.notes.splice(index, 1);
+    }
+  }
+  saveData();
 };
 
 const init = function () {

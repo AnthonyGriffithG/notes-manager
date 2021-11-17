@@ -4,6 +4,7 @@ class NotesView {
   _formTextarea = this._parentEl.querySelector("textarea");
   _noteForm = this._parentEl.querySelector(".new-note-form");
   _data;
+  _deleteHandler;
 
   addNewNoteHandler(handler) {
     this._noteForm.addEventListener("submit", (e) => {
@@ -15,9 +16,10 @@ class NotesView {
 
   renderCategory(data) {
     this._data = data;
-    const markups = data.notes.map((note) => {
-      return `
-      <div class="note">
+    this._parentEl.querySelectorAll(".note").forEach((e) => e.remove());
+    data.notes.forEach((note) => {
+      const markup = `
+      <div class="note" data-id="${note.id}">
         ${note.note}
         <footer class="note-footer">
           <p>${note.date}</p>
@@ -29,18 +31,24 @@ class NotesView {
         </footer>
       </div>
       `;
-    });
-    const noteElements = Array.from(this._parentEl.querySelectorAll(".note"));
-    noteElements.forEach((noteEl) => this._parentEl.removeChild(noteEl));
-    markups.forEach((markup) => {
       this._noteForm.insertAdjacentHTML("beforebegin", markup);
+      const noteElement = this._noteForm.previousElementSibling;
+      const btnNote = noteElement.querySelector(".delete-note-icon");
+      btnNote.addEventListener("click", (event) => {
+        event.preventDefault();
+        this._deleteHandler(note.id);
+        noteElement.style.opacity = "0";
+        setTimeout(function () {
+          noteElement.remove();
+        }, 1000);
+      });
     });
   }
 
   renderNote(note) {
     if (!note) return;
     const markup = `
-    <div class="note">
+    <div class="note" data-id="${note.id}">
         ${note.note}
         <footer class="note-footer">
           <p>${note.date}</p>
@@ -53,7 +61,21 @@ class NotesView {
       </div>
     `;
     this._noteForm.insertAdjacentHTML("beforebegin", markup);
+    const noteElement = this._noteForm.previousElementSibling;
+    const btnNote = noteElement.querySelector(".delete-note-icon");
+    btnNote.addEventListener("click", (event) => {
+      event.preventDefault();
+      this._deleteHandler(note.id);
+      noteElement.style.opacity = "0";
+      setTimeout(function () {
+        noteElement.remove();
+      }, 1000);
+    });
     this._formTextarea.value = "";
+  }
+
+  addHandlerDelete(handler) {
+    this._deleteHandler = handler;
   }
 
   getTextAreaElement() {
