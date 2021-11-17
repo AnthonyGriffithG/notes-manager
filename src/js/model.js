@@ -15,7 +15,7 @@ export const state = {
   ],
   search: {
     query: "",
-    results: [],
+    notes: [],
   },
 };
 
@@ -40,7 +40,9 @@ export const addCategory = function (name) {
 };
 
 export const changeCategory = function (name) {
-  const category = state.categories.find((category) => category.name === name);
+  const category = state.categories.find(
+    (category) => category.name.toLowerCase() === name.toLowerCase()
+  );
   state.currentCategory = category;
 };
 
@@ -64,6 +66,13 @@ const getData = function () {
   state.categories = data.categories;
   state.currentCategory = data.categories;
   state.search = data.search;
+};
+
+export const searchNotes = function (query) {
+  const notes = state.currentCategory.notes.filter((note) =>
+    note.toLowerCase().includes(query.toLowerCase())
+  );
+  state.search.notes = notes;
 };
 
 const init = function () {

@@ -1,6 +1,7 @@
 import * as model from "./model.js";
 import categoryView from "./Views/CategoryView.js";
 import notesView from "./Views/notesView.js";
+import searchView from "./Views/searchView.js";
 
 const controlAddCategory = function (newCategory) {
   try {
@@ -32,11 +33,19 @@ const controlAddNote = function (note) {
   // 2) render it
   notesView.renderNote(note);
 };
+
+const controlSearchNotes = function (query) {
+  // 1) search for results
+  model.searchNotes(query);
+  // 2) render them
+  notesView.renderCategory(model.state.search);
+};
 const init = function () {
   categoryView._data = model.state;
   categoryView.addHandlerCreateCategory(controlAddCategory);
   categoryView.addRenderCategoryHandler(controlCategoryClick);
   notesView.renderCategory(model.state.currentCategory);
   notesView.addNewNoteHandler(controlAddNote);
+  searchView.addHandlerSearch(controlSearchNotes);
 };
 init();

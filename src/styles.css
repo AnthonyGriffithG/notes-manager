@@ -63,7 +63,8 @@ body {
   justify-content: center;
 }
 
-.search-icon {
+.search-icon,
+.delete-search-icon {
   stroke: #b197fc;
   width: 16px;
   height: 16px;
@@ -72,10 +73,14 @@ body {
 #search-bar {
   display: flex;
   background-color: #e5dbff;
-  padding: 6px 3px;
+  padding: 6px 10px;
   border-radius: 2px;
   column-gap: 20px;
   width: 400px;
+}
+
+.delete-search-icon {
+  margin-left: auto;
 }
 
 #search-bar input {

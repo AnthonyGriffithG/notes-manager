@@ -15,6 +15,7 @@ class NotesView {
 
   renderCategory(data) {
     this._data = data;
+    console.log(data);
     const markup = data.notes
       .map((note) => {
         return `
