@@ -159,6 +159,10 @@ body {
   transition: background-color 0.2s;
 }
 
+.category {
+  animation: append-animate-side 0.2s linear;
+}
+
 .new-category {
   font-size: inherit;
 }
@@ -186,6 +190,7 @@ body {
   box-shadow: 3px 3px rgb(99, 99, 99);
   padding: 15px;
   overflow-wrap: break-word;
+  animation: append-animate 0.3s linear;
 }
 
 .add-note {
@@ -257,4 +262,27 @@ textarea::placeholder {
   background-color: #f8f9fa;
   display: flex;
   justify-content: center;
+}
+
+/* ANIMATIONS */
+@keyframes append-animate {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes append-animate-side {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
 }
