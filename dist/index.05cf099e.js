@@ -463,50 +463,142 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _modelJs = require("./model.js");
 var _categoryViewJs = require("./Views/CategoryView.js");
 var _categoryViewJsDefault = parcelHelpers.interopDefault(_categoryViewJs);
+var _notesViewJs = require("./Views/notesView.js");
+var _notesViewJsDefault = parcelHelpers.interopDefault(_notesViewJs);
+var _searchViewJs = require("./Views/searchView.js");
+var _searchViewJsDefault = parcelHelpers.interopDefault(_searchViewJs);
 const controlAddCategory = function(newCategory) {
-    // 1) add new category
-    _modelJs.addCategory(newCategory);
-    // 2) render category
-    _categoryViewJsDefault.default.render(_modelJs.state.currentCategory);
-// 3) render notes
+    try {
+        // 1) add new category
+        _modelJs.addCategory(newCategory);
+        // 2) render category
+        _categoryViewJsDefault.default.render(_modelJs.state.currentCategory);
+        // 3) render notes
+        _notesViewJsDefault.default.renderCategory(_modelJs.state.currentCategory);
+    } catch (err) {
+        console.log("Ya existe esa categoria");
+    }
+};
+const controlCategoryClick = function(categoryName) {
+    // 1) search category
+    _modelJs.changeCategory(categoryName);
+    // 2) render it
+    _notesViewJsDefault.default.renderCategory(_modelJs.state.currentCategory);
+};
+const controlAddNote = function(note) {
+    // 1) add note to the current category
+    _modelJs.addNote(note);
+    // 2) render it
+    const newNote = _modelJs.state.currentCategory.notes.splice(-1)[0];
+    _notesViewJsDefault.default.renderNote(newNote);
+};
+const controlSearchNotes = function(query) {
+    // 1) search for results
+    _modelJs.searchNotes(query);
+    // 2) render them
+    _notesViewJsDefault.default.renderCategory(_modelJs.state.search);
+};
+const control = function() {
 };
 const init = function() {
+    _categoryViewJsDefault.default._data = _modelJs.state;
     _categoryViewJsDefault.default.addHandlerCreateCategory(controlAddCategory);
+    _categoryViewJsDefault.default.addRenderCategoryHandler(controlCategoryClick);
+    _notesViewJsDefault.default.renderCategory(_modelJs.state.currentCategory);
+    _notesViewJsDefault.default.addNewNoteHandler(controlAddNote);
+    _searchViewJsDefault.default.addHandlerSearch(controlSearchNotes);
 };
 init();
 
-},{"./model.js":"1pVJj","./Views/CategoryView.js":"3gmlb","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"1pVJj":[function(require,module,exports) {
+},{"./model.js":"1pVJj","./Views/CategoryView.js":"3gmlb","./Views/notesView.js":"bav4e","./Views/searchView.js":"3hyvd","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"1pVJj":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "state", ()=>state
 );
 parcelHelpers.export(exports, "addCategory", ()=>addCategory
 );
+parcelHelpers.export(exports, "changeCategory", ()=>changeCategory
+);
+parcelHelpers.export(exports, "addNote", ()=>addNote
+);
+parcelHelpers.export(exports, "searchNotes", ()=>searchNotes
+);
 const state = {
     currentCategory: {
         name: "",
         notes: []
     },
-    categories: [],
+    categories: [
+        {
+            name: "Reminders",
+            notes: []
+        },
+        {
+            name: "Notes",
+            notes: []
+        }, 
+    ],
     search: {
         query: "",
-        results: []
+        notes: []
     }
 };
-const addCategory = function(nombre) {
-    // 1) check if the category already exists
-    const exists = state.categories.some((category)=>category.name === nombre
-    );
-    if (exists) return;
-    // 2) create and add the category
-    const newCategory = {
-        name: nombre,
-        notes: []
-    };
-    state.categories.push(newCategory);
-    // 3) set current category to the new one.
-    state.currentCategory = newCategory;
+const addCategory = function(name) {
+    try {
+        // 1) check if the category already exists
+        const exists = categoryExist(name);
+        if (exists) throw new Error("Categoria ya existente");
+        // 2) create and add the category
+        const newCategory = {
+            name: name,
+            notes: []
+        };
+        state.categories.push(newCategory);
+        // 3) set current category to the new one.
+        state.currentCategory = newCategory;
+        saveData();
+    } catch (err) {
+        throw err;
+    }
 };
+const changeCategory = function(name) {
+    const category1 = state.categories.find((category)=>category.name.toLowerCase() === name.toLowerCase()
+    );
+    state.currentCategory = category1;
+};
+const addNote = function(note) {
+    const date = new Date(Date.now()).toDateString();
+    const newNote = {
+        note: note,
+        date: date
+    };
+    state.currentCategory.notes.push(newNote);
+    saveData();
+};
+const categoryExist = function(name) {
+    return state.categories.some((category)=>category.name === name
+    );
+};
+const saveData = function() {
+    localStorage.setItem("state", JSON.stringify(state));
+};
+const getData = function() {
+    const data = JSON.parse(localStorage.getItem("state"));
+    if (!data) return;
+    state.categories = data.categories;
+    state.currentCategory = data.categories;
+    state.search = data.search;
+};
+const searchNotes = function(query) {
+    const notes = state.currentCategory.notes.filter((note)=>note.toLowerCase().includes(query.toLowerCase())
+    );
+    state.search.notes = notes;
+};
+const init = function() {
+    getData();
+    state.currentCategory = state.categories[0];
+};
+init();
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"ciiiV":[function(require,module,exports) {
 exports.interopDefault = function(a) {
@@ -549,9 +641,10 @@ class CategoryView {
     _addCategoryBtn;
     constructor(){
         this._parentEl = document.querySelector(".category-list");
-        this._formAddCategory = document.querySelector(".new-category-form");
+        this._formAddCategory = document.getElementById("new-category-form");
         this._addCategoryBtn = document.querySelector(".add-icon");
-        this._addCategoryBtn.addEventListener("click", this._showCategoryForm.bind(this));
+        this._addCategoryBtn.addEventListener("click", this._showForm.bind(this));
+        this.getFormInput().addEventListener("blur", this._hideForm.bind(this));
     }
     getQuery() {
         const query = this._parentEl.querySelector(".new-category").value;
@@ -570,23 +663,35 @@ class CategoryView {
             this.getFormInput().value = "";
             handler(query);
         });
-        this._formAddCategory.addEventListener("blur", (e)=>{
-            e.preventDefault();
-            const query = this.getQuery();
-            this._parentEl.lastElementChild.classList.toggle("hidden");
-            if (!query) return;
-            this.getFormInput().value = "";
-            handler(query);
+        this.renderSavedCategories();
+    }
+    addRenderCategoryHandler(handler1) {
+        this._parentEl.addEventListener("click", (e)=>{
+            const categoryBTN = e.target.closest(".category");
+            if (!categoryBTN) return;
+            this._parentEl.querySelector(".current").classList.remove("current");
+            categoryBTN.classList.add("current");
+            const categoryName = categoryBTN.textContent.trim();
+            handler1(categoryName);
         });
     }
     render(data) {
         if (!data) return;
+        this._data = data;
         const markup = this._generateCategoryMarkup(data.name);
+        this._parentEl.querySelector(".current").classList.remove("current");
         this._parentEl.lastElementChild.insertAdjacentHTML("beforebegin", markup);
     }
-    _generateCategoryMarkup(name) {
+    renderSavedCategories() {
+        const categories = this._data.categories.slice(2);
+        const markup = categories.map((category)=>{
+            return this._generateCategoryMarkup(category.name, false);
+        }).join("");
+        this._parentEl.lastElementChild.insertAdjacentHTML("beforebegin", markup);
+    }
+    _generateCategoryMarkup(name, isCurrent = true) {
         return `
-    <li class="category">
+    <li class="category ${isCurrent ? "current" : ""}">
       <svg xmlns="http://www.w3.org/2000/svg" class="category-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
       </svg>
@@ -594,13 +699,114 @@ class CategoryView {
     </li>
     `;
     }
-    _showCategoryForm(e) {
+    _showForm(e) {
         e.preventDefault();
-        this._parentEl.lastElementChild.classList.toggle("hidden");
+        this._parentEl.lastElementChild.classList.remove("hidden");
         this.getFormInput().focus();
+    }
+    _hideForm(e1) {
+        e1.preventDefault();
+        this._parentEl.lastElementChild.classList.add("hidden");
+        this.getFormInput().value = "";
     }
 }
 exports.default = new CategoryView();
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"bav4e":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+class NotesView {
+    _parentEl = document.getElementById("notes");
+    _btnAddNote = this._parentEl.querySelector(".submit-note");
+    _formTextarea = this._parentEl.querySelector("textarea");
+    _noteForm = this._parentEl.querySelector(".new-note-form");
+    _data;
+    addNewNoteHandler(handler) {
+        this._noteForm.addEventListener("submit", (e)=>{
+            e.preventDefault();
+            const text = this._formTextarea.value;
+            handler(text);
+        });
+    }
+    renderCategory(data) {
+        this._data = data;
+        const markups = data.notes.map((note)=>{
+            return `
+      <div class="note">
+        ${note.note}
+        <footer class="note-footer">
+          <p>${note.date}</p>
+          <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" class="delete-note-icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+            </svg>
+          </div>
+        </footer>
+      </div>
+      `;
+        });
+        const noteElements = Array.from(this._parentEl.querySelectorAll(".note"));
+        noteElements.forEach((noteEl)=>this._parentEl.removeChild(noteEl)
+        );
+        markups.forEach((markup)=>{
+            this._noteForm.insertAdjacentHTML("beforebegin", markup);
+        });
+    }
+    renderNote(note) {
+        if (!note) return;
+        const markup = `
+    <div class="note">
+        ${note.note}
+        <footer class="note-footer">
+          <p>${note.date}</p>
+          <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" class="delete-note-icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+            </svg>
+          </div>
+        </footer>
+      </div>
+    `;
+        this._noteForm.insertAdjacentHTML("beforebegin", markup);
+        this._formTextarea.value = "";
+    }
+    getTextAreaElement() {
+        return this._parentEl.querySelector("textarea");
+    }
+}
+exports.default = new NotesView();
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"3hyvd":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+class SearchView {
+    parentEl = document.getElementById("search-bar");
+    inputEl = this.parentEl.querySelector("#search");
+    searchBTN = this.parentEl.querySelector(".search-icon");
+    deleteQuery = this.parentEl.querySelector(".delete-search-icon");
+    constructor(){
+        this.deleteQuery.addEventListener("click", (event)=>{
+            event.preventDefault();
+            this.inputEl.value = "";
+        });
+    }
+    getSearchText() {
+        return this.inputEl.value;
+    }
+    addHandlerSearch(handler) {
+        this.parentEl.addEventListener("submit", (event)=>{
+            event.preventDefault();
+            const query = this.getSearchText();
+            handler(query);
+        });
+        this.searchBTN.addEventListener("click", (event)=>{
+            event.preventDefault();
+            const query = this.getSearchText();
+            handler(query);
+        });
+    }
+}
+exports.default = new SearchView();
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}]},["kS06O","lA0Es"], "lA0Es", "parcelRequirec2ef")
 

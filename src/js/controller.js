@@ -1,28 +1,54 @@
 import * as model from "./model.js";
 import categoryView from "./Views/CategoryView.js";
 import notesView from "./Views/notesView.js";
+import searchView from "./Views/searchView.js";
+
 const controlAddCategory = function (newCategory) {
-  // 1) add new category
-  model.addCategory(newCategory);
+  try {
+    // 1) add new category
+    model.addCategory(newCategory);
 
-  // 2) render category
-  categoryView.render(model.state.currentCategory);
+    // 2) render category
+    categoryView.render(model.state.currentCategory);
 
-  // 3) render notes
-  notesView.renderCategory(model.state.currentCategory);
+    // 3) render notes
+    notesView.renderCategory(model.state.currentCategory);
+  } catch (err) {
+    console.log("Ya existe esa categoria");
+  }
 };
 
 const controlCategoryClick = function (categoryName) {
   // 1) search category
-  const category = model.findCategory(categoryName);
+  model.changeCategory(categoryName);
 
   // 2) render it
-  console.log(categoryName);
-  notesView.renderCategory(category);
+  notesView.renderCategory(model.state.currentCategory);
 };
 
+const controlAddNote = function (note) {
+  // 1) add note to the current category
+  model.addNote(note);
+
+  // 2) render it
+  const newNote = model.state.currentCategory.notes.splice(-1)[0];
+  notesView.renderNote(newNote);
+};
+
+const controlSearchNotes = function (query) {
+  // 1) search for results
+  model.searchNotes(query);
+  // 2) render them
+  notesView.renderCategory(model.state.search);
+};
+
+const control = function () {};
 const init = function () {
+  categoryView._data = model.state;
   categoryView.addHandlerCreateCategory(controlAddCategory);
   categoryView.addRenderCategoryHandler(controlCategoryClick);
+  notesView.renderCategory(model.state.currentCategory);
+  notesView.addNewNoteHandler(controlAddNote);
+  searchView.addHandlerSearch(controlSearchNotes);
 };
 init();
