@@ -5,7 +5,12 @@
   font-family: "Poppins", sans-serif;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   font-size: 14px;
   overflow: hidden;
   user-select: none;
@@ -22,6 +27,9 @@ body {
 #body-container {
   display: grid;
   grid-template-columns: 250px 1fr;
+  grid-template-rows: min-content;
+  height: 100%;
+  overflow-x: hidden;
 }
 .hidden {
   visibility: none;
@@ -47,6 +55,7 @@ body {
 
 #main-header {
   display: flex;
+  height: min-content;
   background-color: #2f86a6;
   padding: 2px;
   align-items: center;
@@ -118,7 +127,7 @@ body {
   flex-direction: column;
   padding: 15px 10px;
   row-gap: 10px;
-  height: 100vh;
+  height: 100%;
   border-right: 1px solid rgb(233, 233, 233);
 }
 
@@ -171,6 +180,7 @@ body {
 
 .new-category {
   font-size: inherit;
+  width: inherit;
 }
 .category:hover {
   background-color: #fff;
@@ -356,5 +366,56 @@ textarea::placeholder {
 @media all and (max-width: 839px) {
   #body-container {
     grid-template-columns: 170px 1fr;
+    padding: 15px px;
+  }
+  .new-category {
+    width: 80px;
+  }
+
+  #notes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, min-content));
+    grid-auto-rows: 280px;
+  }
+
+  .note {
+    width: 180px;
+    height: 200px;
+  }
+
+  .new-note-form {
+    width: 180px;
+    height: 200px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  #body-container {
+    grid-template-columns: 130px 1fr;
+    padding: 15px px;
+  }
+
+  .category-list {
+    row-gap: 10px;
+  }
+  .new-category {
+    width: 80px;
+  }
+  .category-icon {
+    display: none;
+  }
+  .category {
+    padding: 0;
+  }
+
+  .category p {
+    word-wrap: break-word;
+  }
+
+  .category-icon {
+    margin-left: 0;
+  }
+  #search-bar {
+    width: 250px;
   }
 }

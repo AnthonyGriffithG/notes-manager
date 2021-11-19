@@ -52,7 +52,7 @@
 46D:\Coding\JavascriptProjects\notes-manager\src132817718232370002 1
 87D:\Coding\JavascriptProjects\notes-manager\node_modules\caniuse-lite\data\regions\FM.js121436361000000000 0
 59D:\Coding\JavascriptProjects\notes-manager\src\js\helper.js132817718232350055 0
-47D:\Coding\JavascriptProjects\notes-manager\dist132817734767186797 1
+47D:\Coding\JavascriptProjects\notes-manager\dist132817825415993640 1
 76D:\Coding\JavascriptProjects\notes-manager\node_modules\acorn\dist\acorn.mjs121436361000000000 0
 105D:\Coding\JavascriptProjects\notes-manager\node_modules\core-js\features\array\virtual\find-last-index.js121436361000000000 0
 77D:\Coding\JavascriptProjects\notes-manager\node_modules\tweetnacl\nacl.min.js131260970820000000 0
@@ -126,7 +126,7 @@
 84D:\Coding\JavascriptProjects\notes-manager\node_modules\jsdom\lib\jsdom\living\nodes132811594166409490 1
 115D:\Coding\JavascriptProjects\notes-manager\node_modules\caniuse-lite\data\features\background-repeat-round-space.js121436361000000000 0
 87D:\Coding\JavascriptProjects\notes-manager\node_modules\caniuse-lite\data\regions\MY.js121436361000000000 0
-57D:\Coding\JavascriptProjects\notes-manager\src\styles.css132817718232370002 0
+57D:\Coding\JavascriptProjects\notes-manager\src\styles.css132817824950057437 0
 89D:\Coding\JavascriptProjects\notes-manager\node_modules\@parcel\babylon-walk\lib\scope.js121436361000000000 0
 92D:\Coding\JavascriptProjects\notes-manager\node_modules\core-js\modules\es.array.flat-map.js121436361000000000 0
 62D:\Coding\JavascriptProjects\notes-manager\node_modules\braces132811594334873743 1
@@ -393,7 +393,7 @@
 127D:\Coding\JavascriptProjects\notes-manager\node_modules\uncss\node_modules\postcss-selector-parser\dist\selectors\combinator.js121436361000000000 0
 94D:\Coding\JavascriptProjects\notes-manager\node_modules\es-abstract\2017\InstanceofOperator.js121436361000000000 0
 78D:\Coding\JavascriptProjects\notes-manager\node_modules\ordered-binary\LICENSE121436361000000000 0
-65D:\Coding\JavascriptProjects\notes-manager\dist\index.5af7eb6e.js132817734767126950 0
+65D:\Coding\JavascriptProjects\notes-manager\dist\index.5af7eb6e.js132817825415933798 0
 102D:\Coding\JavascriptProjects\notes-manager\node_modules\core-js\modules\es.typed-array.uint32-array.js121436361000000000 0
 84D:\Coding\JavascriptProjects\notes-manager\node_modules\highlight.js\styles\arta.css121436361000000000 0
 70D:\Coding\JavascriptProjects\notes-manager\node_modules\object-inspect132811594405803516 1
@@ -2986,7 +2986,6 @@
 82D:\Coding\JavascriptProjects\notes-manager\node_modules\highlight.js\scss\far.scss121436361000000000 0
 105D:\Coding\JavascriptProjects\notes-manager\node_modules\@parcel\runtime-js\src\helpers\node\css-loader.js121436361000000000 0
 94D:\Coding\JavascriptProjects\notes-manager\node_modules\whatwg-encoding\lib\whatwg-encoding.js121436361000000000 0
-70D:\Coding\JavascriptProjects\notes-manager\dist\index.832f3805.css.map132817734767186797 0
 84D:\Coding\JavascriptProjects\notes-manager\node_modules\webidl-conversions\README.md131320990780000000 0
 79D:\Coding\JavascriptProjects\notes-manager\node_modules\node-releases\README.md121436361000000000 0
 75D:\Coding\JavascriptProjects\notes-manager\node_modules\parse-asn1\index.js121436361000000000 0
@@ -5201,7 +5200,7 @@
 88D:\Coding\JavascriptProjects\notes-manager\node_modules\public-encrypt\test\rsa.pass.pub121436361000000000 0
 82D:\Coding\JavascriptProjects\notes-manager\node_modules\lodash\_iteratorToArray.js121436361000000000 0
 78D:\Coding\JavascriptProjects\notes-manager\node_modules\lodash\fp\toInteger.js121436361000000000 0
-58D:\Coding\JavascriptProjects\notes-manager\dist\index.html132817734767126950 0
+58D:\Coding\JavascriptProjects\notes-manager\dist\index.html132817825415933798 0
 100D:\Coding\JavascriptProjects\notes-manager\node_modules\@parcel\runtime-js\src\helpers\bundle-url.js121436361000000000 0
 79D:\Coding\JavascriptProjects\notes-manager\node_modules\es-abstract\2018\Day.js121436361000000000 0
 88D:\Coding\JavascriptProjects\notes-manager\node_modules\public-encrypt\test\test_key.pem121436361000000000 0
@@ -15658,5 +15657,6 @@
 70D:\Coding\JavascriptProjects\notes-manager\node_modules\.bin\uncss.ps1132811594455829592 0
 69D:\Coding\JavascriptProjects\notes-manager\node_modules\.bin\uuid.cmd132811594455530391 0
 70D:\Coding\JavascriptProjects\notes-manager\node_modules\.bin\which.ps1132811594455610183 0
-69D:\Coding\JavascriptProjects\notes-manager\dist\index.5af7eb6e.js.map132817734767186797 0
-66D:\Coding\JavascriptProjects\notes-manager\dist\index.832f3805.css132817734767126950 0
+69D:\Coding\JavascriptProjects\notes-manager\dist\index.5af7eb6e.js.map132817825415993640 0
+66D:\Coding\JavascriptProjects\notes-manager\dist\index.b5f9e10d.css132817825415933798 0
+70D:\Coding\JavascriptProjects\notes-manager\dist\index.b5f9e10d.css.map132817825415983666 0
