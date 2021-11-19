@@ -1,4 +1,4 @@
-15660
+15661
 87D:\Coding\JavascriptProjects\notes-manager\node_modules\caniuse-lite\data\regions\WF.js121436361000000000 0
 97D:\Coding\JavascriptProjects\notes-manager\node_modules\core-js\features\async-iterator\reduce.js121436361000000000 0
 70D:\Coding\JavascriptProjects\notes-manager\node_modules\pako\README.md121436361000000000 0
@@ -11,7 +11,7 @@
 78D:\Coding\JavascriptProjects\notes-manager\node_modules\browser-process-hrtime132811594451909315 1
 78D:\Coding\JavascriptProjects\notes-manager\node_modules\terminal-link\index.js121436361000000000 0
 121D:\Coding\JavascriptProjects\notes-manager\node_modules\lmdb-store\dependencies\lmdb-data-v1\libraries\liblmdb\mdb_stat.1121436361000000000 0
-55D:\Coding\JavascriptProjects\notes-manager\package.json132811594465847183 0
+55D:\Coding\JavascriptProjects\notes-manager\package.json132817725315467475 0
 90D:\Coding\JavascriptProjects\notes-manager\node_modules\htmlnano\lib\modules\minifyUrls.js121436361000000000 0
 105D:\Coding\JavascriptProjects\notes-manager\node_modules\@babel\traverse\node_modules\debug\src\browser.js121436361000000000 0
 116D:\Coding\JavascriptProjects\notes-manager\node_modules\postcss-modules\node_modules\postcss\lib\css-syntax-error.js121436361000000000 0
@@ -49,8 +49,10 @@
 90D:\Coding\JavascriptProjects\notes-manager\node_modules\svgo\plugins\convertShapeToPath.js121436361000000000 0
 76D:\Coding\JavascriptProjects\notes-manager\node_modules\lodash\collection.js121436361000000000 0
 111D:\Coding\JavascriptProjects\notes-manager\node_modules\jsdom\lib\jsdom\living\generated\PageTransitionEvent.js121436361000000000 0
-46D:\Coding\JavascriptProjects\notes-manager\src132812511342882380 1
-47D:\Coding\JavascriptProjects\notes-manager\dist132816582926535302 1
+46D:\Coding\JavascriptProjects\notes-manager\src132817718232370002 1
+87D:\Coding\JavascriptProjects\notes-manager\node_modules\caniuse-lite\data\regions\FM.js121436361000000000 0
+59D:\Coding\JavascriptProjects\notes-manager\src\js\helper.js132817718232350055 0
+47D:\Coding\JavascriptProjects\notes-manager\dist132817725651217922 1
 76D:\Coding\JavascriptProjects\notes-manager\node_modules\acorn\dist\acorn.mjs121436361000000000 0
 105D:\Coding\JavascriptProjects\notes-manager\node_modules\core-js\features\array\virtual\find-last-index.js121436361000000000 0
 77D:\Coding\JavascriptProjects\notes-manager\node_modules\tweetnacl\nacl.min.js131260970820000000 0
@@ -80,7 +82,7 @@
 96D:\Coding\JavascriptProjects\notes-manager\node_modules\jsdom\lib\jsdom\living\xmlhttprequest.js121436361000000000 0
 97D:\Coding\JavascriptProjects\notes-manager\node_modules\core-js\internals\advance-string-index.js121436361000000000 0
 79D:\Coding\JavascriptProjects\notes-manager\node_modules\string-width\index.d.ts121436361000000000 0
-53D:\Coding\JavascriptProjects\notes-manager\index.html132816432633546699 0
+53D:\Coding\JavascriptProjects\notes-manager\index.html132817718232240346 0
 79D:\Coding\JavascriptProjects\notes-manager\node_modules\postcss\lib\document.js121436361000000000 0
 80D:\Coding\JavascriptProjects\notes-manager\node_modules\abortcontroller-polyfill132811594287424463 1
 122D:\Coding\JavascriptProjects\notes-manager\node_modules\postcss-modules-extract-imports\node_modules\color-name\.npmignore130800019150000000 0
@@ -98,7 +100,7 @@
 67D:\Coding\JavascriptProjects\notes-manager\node_modules\xxhash-wasm132811594312160461 1
 80D:\Coding\JavascriptProjects\notes-manager\node_modules\lodash\_reInterpolate.js121436361000000000 0
 113D:\Coding\JavascriptProjects\notes-manager\node_modules\postcss-modules-local-by-default\node_modules\ansi-styles132811594384439030 1
-49D:\Coding\JavascriptProjects\notes-manager\src\js132812512201054124 1
+49D:\Coding\JavascriptProjects\notes-manager\src\js132817718232360019 1
 101D:\Coding\JavascriptProjects\notes-manager\node_modules\@parcel\packager-js\src\GlobalOutputFormat.js121436361000000000 0
 72D:\Coding\JavascriptProjects\notes-manager\node_modules\lodash\object.js121436361000000000 0
 89D:\Coding\JavascriptProjects\notes-manager\node_modules\type-fest\source\typed-array.d.ts121436361000000000 0
@@ -116,7 +118,7 @@
 76D:\Coding\JavascriptProjects\notes-manager\node_modules\lodash\fp\shuffle.js121436361000000000 0
 102D:\Coding\JavascriptProjects\notes-manager\node_modules\serve-handler\node_modules\mime-types\index.js131632715760000000 0
 87D:\Coding\JavascriptProjects\notes-manager\node_modules\msgpackr-extract\.prebuilds.tmp132811594085754663 1
-71D:\Coding\JavascriptProjects\notes-manager\src\js\Views\categoryView.js132815113273085720 0
+71D:\Coding\JavascriptProjects\notes-manager\src\js\Views\categoryView.js132817718232310153 0
 88D:\Coding\JavascriptProjects\notes-manager\node_modules\ansi-html-community\package.json132811594281991309 0
 70D:\Coding\JavascriptProjects\notes-manager\node_modules\diffie-hellman132811594356522316 1
 80D:\Coding\JavascriptProjects\notes-manager\node_modules\xmlchars\xmlchars.js.map121436361000000000 0
@@ -124,7 +126,7 @@
 84D:\Coding\JavascriptProjects\notes-manager\node_modules\jsdom\lib\jsdom\living\nodes132811594166409490 1
 115D:\Coding\JavascriptProjects\notes-manager\node_modules\caniuse-lite\data\features\background-repeat-round-space.js121436361000000000 0
 87D:\Coding\JavascriptProjects\notes-manager\node_modules\caniuse-lite\data\regions\MY.js121436361000000000 0
-57D:\Coding\JavascriptProjects\notes-manager\src\styles.css132816479338248525 0
+57D:\Coding\JavascriptProjects\notes-manager\src\styles.css132817718232370002 0
 89D:\Coding\JavascriptProjects\notes-manager\node_modules\@parcel\babylon-walk\lib\scope.js121436361000000000 0
 92D:\Coding\JavascriptProjects\notes-manager\node_modules\core-js\modules\es.array.flat-map.js121436361000000000 0
 62D:\Coding\JavascriptProjects\notes-manager\node_modules\braces132811594334873743 1
@@ -146,7 +148,7 @@
 83D:\Coding\JavascriptProjects\notes-manager\node_modules\crypto-browserify\test\node132811594057970990 1
 103D:\Coding\JavascriptProjects\notes-manager\node_modules\es-abstract\2020\CanonicalNumericIndexString.js121436361000000000 0
 72D:\Coding\JavascriptProjects\notes-manager\node_modules\parcel\README.md121436361000000000 0
-63D:\Coding\JavascriptProjects\notes-manager\src\js\controller.js132816572409798311 0
+63D:\Coding\JavascriptProjects\notes-manager\src\js\controller.js132817718232340073 0
 98D:\Coding\JavascriptProjects\notes-manager\node_modules\es-abstract\2020\OrdinaryGetOwnProperty.js121436361000000000 0
 96D:\Coding\JavascriptProjects\notes-manager\node_modules\caniuse-lite\data\features\nav-timing.js121436361000000000 0
 62D:\Coding\JavascriptProjects\notes-manager\node_modules\stable132811594342350504 1
@@ -175,7 +177,7 @@
 84D:\Coding\JavascriptProjects\notes-manager\node_modules\crypto-browserify\test\dh.js130909473450000000 0
 113D:\Coding\JavascriptProjects\notes-manager\node_modules\lmdb-store\dependencies\lmdb\libraries\liblmdb\mdb_stat.c121436361000000000 0
 72D:\Coding\JavascriptProjects\notes-manager\node_modules\uri-js\README.md121436361000000000 0
-58D:\Coding\JavascriptProjects\notes-manager\src\js\model.js132816582925597702 0
+58D:\Coding\JavascriptProjects\notes-manager\src\js\model.js132817718232360019 0
 73D:\Coding\JavascriptProjects\notes-manager\node_modules\uniqs\.travis.yml130461333950000000 0
 84D:\Coding\JavascriptProjects\notes-manager\node_modules\@parcel\watcher\package.json132811594407779380 0
 103D:\Coding\JavascriptProjects\notes-manager\node_modules\jsdom\lib\jsdom\living\generated\CustomEvent.js121436361000000000 0
@@ -191,7 +193,7 @@
 75D:\Coding\JavascriptProjects\notes-manager\node_modules\statuses\HISTORY.md131666749230000000 0
 78D:\Coding\JavascriptProjects\notes-manager\node_modules\is-resolvable\index.js131610841790000000 0
 75D:\Coding\JavascriptProjects\notes-manager\node_modules\lodash\fp\before.js121436361000000000 0
-55D:\Coding\JavascriptProjects\notes-manager\src\js\Views132815810740948239 1
+55D:\Coding\JavascriptProjects\notes-manager\src\js\Views132817718232330108 1
 76D:\Coding\JavascriptProjects\notes-manager\node_modules\constants-browserify132811594449912480 1
 90D:\Coding\JavascriptProjects\notes-manager\node_modules\core-js\features\iterator\every.js121436361000000000 0
 78D:\Coding\JavascriptProjects\notes-manager\node_modules\minimist\test\parse.js121436361000000000 0
@@ -203,7 +205,7 @@
 74D:\Coding\JavascriptProjects\notes-manager\node_modules\is-regex\.eslintrc121436361000000000 0
 87D:\Coding\JavascriptProjects\notes-manager\node_modules\caniuse-lite\data\regions\DE.js121436361000000000 0
 96D:\Coding\JavascriptProjects\notes-manager\node_modules\core-js\stable\array\virtual\for-each.js121436361000000000 0
-68D:\Coding\JavascriptProjects\notes-manager\src\js\Views\notesView.js132816582134749364 0
+68D:\Coding\JavascriptProjects\notes-manager\src\js\Views\notesView.js132817718232320136 0
 103D:\Coding\JavascriptProjects\notes-manager\node_modules\generic-names\.idea\dictionaries\sheo13666q.xml121436361000000000 0
 108D:\Coding\JavascriptProjects\notes-manager\node_modules\@babel\types\scripts\generators\typescript-legacy.js121012626000000000 0
 60D:\Coding\JavascriptProjects\notes-manager\node_modules\uniq132811594334191020 1
@@ -211,7 +213,7 @@
 106D:\Coding\JavascriptProjects\notes-manager\node_modules\globals\node_modules\type-fest\source\entries.d.ts121436361000000000 0
 95D:\Coding\JavascriptProjects\notes-manager\node_modules\core-js\es\typed-array\last-index-of.js121436361000000000 0
 109D:\Coding\JavascriptProjects\notes-manager\node_modules\msgpackr-extract\prebuilds\win32-x64\node.abi102.node121436361000000000 0
-69D:\Coding\JavascriptProjects\notes-manager\src\js\Views\searchView.js132815844595366243 0
+69D:\Coding\JavascriptProjects\notes-manager\src\js\Views\searchView.js132817718232330108 0
 78D:\Coding\JavascriptProjects\notes-manager\node_modules\object-is\CHANGELOG.md121436361000000000 0
 85D:\Coding\JavascriptProjects\notes-manager\node_modules\type-fest\source\mutable.d.ts121436361000000000 0
 77D:\Coding\JavascriptProjects\notes-manager\node_modules\lodash\_arrayEvery.js121436361000000000 0
@@ -222,6 +224,9 @@
 62D:\Coding\JavascriptProjects\notes-manager\node_modules\big.js132811594451909315 1
 61D:\Coding\JavascriptProjects\notes-manager\node_modules\clone132811594450432064 1
 60D:\Coding\JavascriptProjects\notes-manager\node_modules\.bin132811594455939301 1
+59D:\Coding\JavascriptProjects\notes-manager\node_modules\ajv132811594329192772 1
+86D:\Coding\JavascriptProjects\notes-manager\node_modules\@parcel\core\src\buildCache.js121436361000000000 0
+77D:\Coding\JavascriptProjects\notes-manager\node_modules\requires-port\LICENSE130683296700000000 0
 78D:\Coding\JavascriptProjects\notes-manager\node_modules\lodash\fp\overEvery.js121436361000000000 0
 70D:\Coding\JavascriptProjects\notes-manager\node_modules\type-fest\ts41132811594073290118 1
 106D:\Coding\JavascriptProjects\notes-manager\node_modules\@parcel\node-libs-browser\node_modules\safe-buffer132811594288192946 1
@@ -240,9 +245,6 @@
 74D:\Coding\JavascriptProjects\notes-manager\node_modules\ajv\lib\dot\if.jst121436361000000000 0
 86D:\Coding\JavascriptProjects\notes-manager\node_modules\core-js\stable\regexp\match.js121436361000000000 0
 62D:\Coding\JavascriptProjects\notes-manager\node_modules\@types132811594258976066 1
-59D:\Coding\JavascriptProjects\notes-manager\node_modules\ajv132811594329192772 1
-86D:\Coding\JavascriptProjects\notes-manager\node_modules\@parcel\core\src\buildCache.js121436361000000000 0
-77D:\Coding\JavascriptProjects\notes-manager\node_modules\requires-port\LICENSE130683296700000000 0
 78D:\Coding\JavascriptProjects\notes-manager\node_modules\define-properties\test132811594084341522 1
 62D:\Coding\JavascriptProjects\notes-manager\node_modules\@iarna132811594258856341 1
 74D:\Coding\JavascriptProjects\notes-manager\node_modules\uri-js\dist\esnext132811594073738923 1
@@ -391,6 +393,7 @@
 127D:\Coding\JavascriptProjects\notes-manager\node_modules\uncss\node_modules\postcss-selector-parser\dist\selectors\combinator.js121436361000000000 0
 94D:\Coding\JavascriptProjects\notes-manager\node_modules\es-abstract\2017\InstanceofOperator.js121436361000000000 0
 78D:\Coding\JavascriptProjects\notes-manager\node_modules\ordered-binary\LICENSE121436361000000000 0
+65D:\Coding\JavascriptProjects\notes-manager\dist\index.5af7eb6e.js132817725651158081 0
 102D:\Coding\JavascriptProjects\notes-manager\node_modules\core-js\modules\es.typed-array.uint32-array.js121436361000000000 0
 84D:\Coding\JavascriptProjects\notes-manager\node_modules\highlight.js\styles\arta.css121436361000000000 0
 70D:\Coding\JavascriptProjects\notes-manager\node_modules\object-inspect132811594405803516 1
@@ -1077,11 +1080,6 @@
 66D:\Coding\JavascriptProjects\notes-manager\node_modules\indexes-of132811594434300426 1
 83D:\Coding\JavascriptProjects\notes-manager\node_modules\@parcel\reporter-dev-server132811594305048225 1
 60D:\Coding\JavascriptProjects\notes-manager\node_modules\glob132811594312932607 1
-101D:\Coding\JavascriptProjects\notes-manager\node_modules\@babel\traverse\lib\path\lib\removal-hooks.js121012626000000000 0
-83D:\Coding\JavascriptProjects\notes-manager\node_modules\object.assign\test\index.js121436361000000000 0
-77D:\Coding\JavascriptProjects\notes-manager\node_modules\on-finished\README.md130770808350000000 0
-97D:\Coding\JavascriptProjects\notes-manager\node_modules\es-abstract\2020\DefinePropertyOrThrow.js121436361000000000 0
-101D:\Coding\JavascriptProjects\notes-manager\node_modules\uncss\node_modules\postcss\lib\declaration.js121436361000000000 0
 98D:\Coding\JavascriptProjects\notes-manager\node_modules\@parcel\transformer-babel\src\constants.js121436361000000000 0
 82D:\Coding\JavascriptProjects\notes-manager\node_modules\path-is-absolute\readme.md131196840770000000 0
 69D:\Coding\JavascriptProjects\notes-manager\node_modules\parent-module132811594404884792 1
@@ -2182,8 +2180,6 @@
 84D:\Coding\JavascriptProjects\notes-manager\node_modules\@parcel\utils\src\urlJoin.js121436361000000000 0
 62D:\Coding\JavascriptProjects\notes-manager\node_modules\semver132811594357699049 1
 69D:\Coding\JavascriptProjects\notes-manager\node_modules\serve-handler132811594355924129 1
-71D:\Coding\JavascriptProjects\notes-manager\node_modules\yaml\types.d.ts121436361000000000 0
-76D:\Coding\JavascriptProjects\notes-manager\node_modules\lodash\_baseClamp.js121436361000000000 0
 103D:\Coding\JavascriptProjects\notes-manager\node_modules\uncss\node_modules\commander\typings\index.d.ts121436361000000000 0
 93D:\Coding\JavascriptProjects\notes-manager\node_modules\@parcel\transformer-json\node_modules132811594454572956 1
 68D:\Coding\JavascriptProjects\notes-manager\node_modules\setimmediate132811594353154130 1
@@ -2412,10 +2408,10 @@
 90D:\Coding\JavascriptProjects\notes-manager\node_modules\htmlnano\docs\docusaurus.config.js121436361000000000 0
 65D:\Coding\JavascriptProjects\notes-manager\node_modules\word-wrap132811594312912640 1
 65D:\Coding\JavascriptProjects\notes-manager\node_modules\wrap-ansi132811594312912640 1
+66D:\Coding\JavascriptProjects\notes-manager\node_modules\uuid\v3.js121436361000000000 0
 98D:\Coding\JavascriptProjects\notes-manager\node_modules\core-js\internals\string-pad-webkit-bug.js121436361000000000 0
 73D:\Coding\JavascriptProjects\notes-manager\node_modules\lodash\partial.js121436361000000000 0
 77D:\Coding\JavascriptProjects\notes-manager\node_modules\punycode\package.json132811594360699642 0
-66D:\Coding\JavascriptProjects\notes-manager\node_modules\uuid\v3.js121436361000000000 0
 78D:\Coding\JavascriptProjects\notes-manager\node_modules\log-symbols\browser.js121436361000000000 0
 107D:\Coding\JavascriptProjects\notes-manager\node_modules\globals\node_modules\type-fest\ts41\camel-case.d.ts121436361000000000 0
 79D:\Coding\JavascriptProjects\notes-manager\node_modules\astring\dist\astring.js121436361000000000 0
@@ -2450,6 +2446,8 @@
 78D:\Coding\JavascriptProjects\notes-manager\node_modules\yaml\browser\schema.js121436361000000000 0
 66D:\Coding\JavascriptProjects\notes-manager\node_modules\yaml\types132811594057332687 1
 78D:\Coding\JavascriptProjects\notes-manager\node_modules\lodash\fp\snakeCase.js121436361000000000 0
+71D:\Coding\JavascriptProjects\notes-manager\node_modules\yaml\types.d.ts121436361000000000 0
+76D:\Coding\JavascriptProjects\notes-manager\node_modules\lodash\_baseClamp.js121436361000000000 0
 98D:\Coding\JavascriptProjects\notes-manager\node_modules\es-abstract\2016\RequireObjectCoercible.js121436361000000000 0
 88D:\Coding\JavascriptProjects\notes-manager\node_modules\es-abstract\2018\YearFromTime.js121436361000000000 0
 71D:\Coding\JavascriptProjects\notes-manager\node_modules\lodash\rearg.js121436361000000000 0
@@ -2988,6 +2986,7 @@
 82D:\Coding\JavascriptProjects\notes-manager\node_modules\highlight.js\scss\far.scss121436361000000000 0
 105D:\Coding\JavascriptProjects\notes-manager\node_modules\@parcel\runtime-js\src\helpers\node\css-loader.js121436361000000000 0
 94D:\Coding\JavascriptProjects\notes-manager\node_modules\whatwg-encoding\lib\whatwg-encoding.js121436361000000000 0
+70D:\Coding\JavascriptProjects\notes-manager\dist\index.832f3805.css.map132817725651207948 0
 84D:\Coding\JavascriptProjects\notes-manager\node_modules\webidl-conversions\README.md131320990780000000 0
 79D:\Coding\JavascriptProjects\notes-manager\node_modules\node-releases\README.md121436361000000000 0
 75D:\Coding\JavascriptProjects\notes-manager\node_modules\parse-asn1\index.js121436361000000000 0
@@ -3038,7 +3037,6 @@
 85D:\Coding\JavascriptProjects\notes-manager\node_modules\highlight.js\styles\docco.css121436361000000000 0
 103D:\Coding\JavascriptProjects\notes-manager\node_modules\postcss-minify-selectors\dist\lib\canUnquote.js121436361000000000 0
 85D:\Coding\JavascriptProjects\notes-manager\node_modules\readable-stream\GOVERNANCE.md121436361000000000 0
-69D:\Coding\JavascriptProjects\notes-manager\dist\index.05cf099e.js.map132816582926525328 0
 87D:\Coding\JavascriptProjects\notes-manager\node_modules\posthtml-parser\dist\index.d.ts121436361000000000 0
 68D:\Coding\JavascriptProjects\notes-manager\node_modules\wcwidth\test132811594054420472 1
 70D:\Coding\JavascriptProjects\notes-manager\node_modules\lodash\bind.js121436361000000000 0
@@ -3527,6 +3525,11 @@
 73D:\Coding\JavascriptProjects\notes-manager\node_modules\ripemd160\LICENSE131685915220000000 0
 73D:\Coding\JavascriptProjects\notes-manager\node_modules\lodash\fp\drop.js121436361000000000 0
 106D:\Coding\JavascriptProjects\notes-manager\node_modules\uncss\node_modules\postcss\lib\css-syntax-error.js121436361000000000 0
+101D:\Coding\JavascriptProjects\notes-manager\node_modules\@babel\traverse\lib\path\lib\removal-hooks.js121012626000000000 0
+83D:\Coding\JavascriptProjects\notes-manager\node_modules\object.assign\test\index.js121436361000000000 0
+77D:\Coding\JavascriptProjects\notes-manager\node_modules\on-finished\README.md130770808350000000 0
+97D:\Coding\JavascriptProjects\notes-manager\node_modules\es-abstract\2020\DefinePropertyOrThrow.js121436361000000000 0
+101D:\Coding\JavascriptProjects\notes-manager\node_modules\uncss\node_modules\postcss\lib\declaration.js121436361000000000 0
 77D:\Coding\JavascriptProjects\notes-manager\node_modules\minimist\test\dash.js121436361000000000 0
 84D:\Coding\JavascriptProjects\notes-manager\node_modules\core-js\es\typed-array\at.js121436361000000000 0
 95D:\Coding\JavascriptProjects\notes-manager\node_modules\uncss\node_modules\postcss\lib\input.js121436361000000000 0
@@ -5198,7 +5201,7 @@
 88D:\Coding\JavascriptProjects\notes-manager\node_modules\public-encrypt\test\rsa.pass.pub121436361000000000 0
 82D:\Coding\JavascriptProjects\notes-manager\node_modules\lodash\_iteratorToArray.js121436361000000000 0
 78D:\Coding\JavascriptProjects\notes-manager\node_modules\lodash\fp\toInteger.js121436361000000000 0
-58D:\Coding\JavascriptProjects\notes-manager\dist\index.html132816565265323178 0
+58D:\Coding\JavascriptProjects\notes-manager\dist\index.html132817725651158081 0
 100D:\Coding\JavascriptProjects\notes-manager\node_modules\@parcel\runtime-js\src\helpers\bundle-url.js121436361000000000 0
 79D:\Coding\JavascriptProjects\notes-manager\node_modules\es-abstract\2018\Day.js121436361000000000 0
 88D:\Coding\JavascriptProjects\notes-manager\node_modules\public-encrypt\test\test_key.pem121436361000000000 0
@@ -6618,8 +6621,8 @@
 73D:\Coding\JavascriptProjects\notes-manager\node_modules\parseurl\index.js121436361000000000 0
 75D:\Coding\JavascriptProjects\notes-manager\node_modules\parse5\package.json132811594392428365 0
 77D:\Coding\JavascriptProjects\notes-manager\node_modules\es-abstract\es2017.js121436361000000000 0
-110D:\Coding\JavascriptProjects\notes-manager\node_modules\jsdom\lib\jsdom\living\generated\DocumentReadyState.js121436361000000000 0
 79D:\Coding\JavascriptProjects\notes-manager\node_modules\es-abstract\2018\Get.js121436361000000000 0
+110D:\Coding\JavascriptProjects\notes-manager\node_modules\jsdom\lib\jsdom\living\generated\DocumentReadyState.js121436361000000000 0
 72D:\Coding\JavascriptProjects\notes-manager\node_modules\parse5\README.md121436361000000000 0
 90D:\Coding\JavascriptProjects\notes-manager\node_modules\lmdb-store\src\v8-fast-api-calls.h121436361000000000 0
 90D:\Coding\JavascriptProjects\notes-manager\node_modules\core-js\modules\es.array.splice.js121436361000000000 0
@@ -7301,10 +7304,10 @@
 95D:\Coding\JavascriptProjects\notes-manager\node_modules\miller-rabin\node_modules\bn.js\LICENSE121436361000000000 0
 104D:\Coding\JavascriptProjects\notes-manager\node_modules\@babel\highlight\node_modules\color-name\LICENSE130953959930000000 0
 70D:\Coding\JavascriptProjects\notes-manager\node_modules\lodash\keys.js121436361000000000 0
-78D:\Coding\JavascriptProjects\notes-manager\node_modules\@parcel\optimizer-svgo132811594305721555 1
-97D:\Coding\JavascriptProjects\notes-manager\node_modules\miller-rabin\node_modules\bn.js\README.md121436361000000000 0
 106D:\Coding\JavascriptProjects\notes-manager\node_modules\@babel\highlight\node_modules\color-name\README.md131339336430000000 0
 83D:\Coding\JavascriptProjects\notes-manager\node_modules\lodash\sortedLastIndexOf.js121436361000000000 0
+78D:\Coding\JavascriptProjects\notes-manager\node_modules\@parcel\optimizer-svgo132811594305721555 1
+97D:\Coding\JavascriptProjects\notes-manager\node_modules\miller-rabin\node_modules\bn.js\README.md121436361000000000 0
 97D:\Coding\JavascriptProjects\notes-manager\node_modules\miller-rabin\node_modules\bn.js\lib\bn.js121436361000000000 0
 104D:\Coding\JavascriptProjects\notes-manager\node_modules\@parcel\core\lib\requests\ParcelConfigRequest.js121436361000000000 0
 79D:\Coding\JavascriptProjects\notes-manager\node_modules\micromatch\CHANGELOG.md121436361000000000 0
@@ -10188,7 +10191,6 @@
 90D:\Coding\JavascriptProjects\notes-manager\node_modules\highlight.js\lib\languages\isbl.js121436361000000000 0
 126D:\Coding\JavascriptProjects\notes-manager\node_modules\css-modules-loader-core\node_modules\postcss\docs\guidelines\runner.md131386303520000000 0
 96D:\Coding\JavascriptProjects\notes-manager\node_modules\highlight.js\lib\languages\javascript.js121436361000000000 0
-65D:\Coding\JavascriptProjects\notes-manager\dist\index.05cf099e.js132816582926505382 0
 90D:\Coding\JavascriptProjects\notes-manager\node_modules\core-js\es\instance\copy-within.js121436361000000000 0
 92D:\Coding\JavascriptProjects\notes-manager\node_modules\core-js\features\set\is-subset-of.js121436361000000000 0
 90D:\Coding\JavascriptProjects\notes-manager\node_modules\highlight.js\lib\languages\json.js121436361000000000 0
@@ -13851,7 +13853,6 @@
 87D:\Coding\JavascriptProjects\notes-manager\node_modules\caniuse-lite\data\regions\EG.js121436361000000000 0
 87D:\Coding\JavascriptProjects\notes-manager\node_modules\caniuse-lite\data\regions\ER.js121436361000000000 0
 87D:\Coding\JavascriptProjects\notes-manager\node_modules\caniuse-lite\data\regions\FK.js121436361000000000 0
-87D:\Coding\JavascriptProjects\notes-manager\node_modules\caniuse-lite\data\regions\FM.js121436361000000000 0
 87D:\Coding\JavascriptProjects\notes-manager\node_modules\caniuse-lite\data\regions\FR.js121436361000000000 0
 80D:\Coding\JavascriptProjects\notes-manager\node_modules\@parcel\transformer-json132811594304716653 1
 87D:\Coding\JavascriptProjects\notes-manager\node_modules\caniuse-lite\data\regions\GA.js121436361000000000 0
@@ -14327,7 +14328,6 @@
 78D:\Coding\JavascriptProjects\notes-manager\node_modules\browserify-rsa\LICENSE121436361000000000 0
 80D:\Coding\JavascriptProjects\notes-manager\node_modules\browserify-rsa\README.md121436361000000000 0
 78D:\Coding\JavascriptProjects\notes-manager\node_modules\browserify-des\license121436361000000000 0
-66D:\Coding\JavascriptProjects\notes-manager\dist\index.be5cf2f4.css132816565265053901 0
 79D:\Coding\JavascriptProjects\notes-manager\node_modules\browserify-des\modes.js121436361000000000 0
 101D:\Coding\JavascriptProjects\notes-manager\node_modules\@swc\helpers\lib\_interop_require_wildcard.js132811082760000000 0
 83D:\Coding\JavascriptProjects\notes-manager\node_modules\browserify-des\package.json132811594348290781 0
@@ -15658,4 +15658,5 @@
 70D:\Coding\JavascriptProjects\notes-manager\node_modules\.bin\uncss.ps1132811594455829592 0
 69D:\Coding\JavascriptProjects\notes-manager\node_modules\.bin\uuid.cmd132811594455530391 0
 70D:\Coding\JavascriptProjects\notes-manager\node_modules\.bin\which.ps1132811594455610183 0
-70D:\Coding\JavascriptProjects\notes-manager\dist\index.be5cf2f4.css.map132816565265283286 0
+69D:\Coding\JavascriptProjects\notes-manager\dist\index.5af7eb6e.js.map132817725651207948 0
+66D:\Coding\JavascriptProjects\notes-manager\dist\index.832f3805.css132817725651158081 0
