@@ -8,6 +8,10 @@ class SearchView {
       event.preventDefault();
       this.inputEl.value = "";
     });
+    this.parentEl.addEventListener("click", (e) => {
+      e.preventDefault();
+      this.inputEl.focus();
+    });
   }
 
   getSearchText() {
