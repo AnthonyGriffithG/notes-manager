@@ -46,6 +46,16 @@ const controlDeleteNote = function (noteID) {
   // 1) delete the note
   model.deleteNote(noteID);
 };
+
+const controlAddFavoriteNote = function (note) {
+  // 1) add note to favorites
+  model.addFavorite(note);
+};
+
+const controlDeleteFavoriteNote = function (id) {
+  // 1) delete note from favorites
+  model.deleteFavorite(id);
+};
 const init = function () {
   categoryView._data = model.state;
   notesView._deleteHandler = controlDeleteNote;

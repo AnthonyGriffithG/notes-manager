@@ -20,6 +20,7 @@ export const state = {
     query: "",
     notes: [],
   },
+  favorites: [],
 };
 
 export const addCategory = function (name) {
@@ -96,6 +97,17 @@ export const deleteNote = function (id) {
       state.currentCategory.notes.splice(index, 1);
     }
   }
+  saveData();
+};
+
+export const addFavorite = function (newNote) {
+  state.favorites.push(newNote);
+  saveData();
+};
+
+export const deleteFavorite = function (id) {
+  index = state.favorites.findIndex((note) => note.id === id);
+  state.favorites.splice(index, 1);
   saveData();
 };
 
